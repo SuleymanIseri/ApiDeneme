@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/sehir_graph"
+    app:startDestination="@id/cityListFragment">
+
+    <fragment
+        android:id="@+id/cityListFragment"
+        android:name="com.example.apideneme.view.CityListFragment"
+        android:label="CityListFragment" >
+        <action
+            android:id="@+id/action_cityListFragment_to_cityDetailFragment"
+            app:destination="@id/cityDetailFragment" />
+        <action
+            android:id="@+id/action_cityListFragment_to_cityDetailFragment2"
+            app:destination="@id/cityDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/cityDetailFragment"
+        android:name="com.example.apideneme.view.CityDetailFragment"
+        android:label="CityDetailFragment" >
+        <action
+            android:id="@+id/action_cityDetailFragment_to_cityListFragment"
+            app:destination="@id/cityListFragment" />
+        <action
+            android:id="@+id/action_cityDetailFragment_to_cityListFragment2"
+            app:destination="@id/cityListFragment" />
+        <argument
+            android:name="sehirId"
+            app:argType="integer"
+            android:defaultValue="0" />
+    </fragment>
+</navigation>

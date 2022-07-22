@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android">
+<LinearLayout
+
+    android:layout_width="match_parent"
+    android:layout_height="150dp"
+    android:orientation="vertical"
+    android:gravity="center"
+    >
+
+    <TextView
+        android:id="@+id/cityName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="City Name"
+        android:layout_weight="1"
+        android:layout_margin="5dp"
+        android:textStyle="bold"
+        android:textSize="20sp">
+
+    </TextView>
+
+    <TextView
+        android:id="@+id/cityDesc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="City Description"
+        android:textStyle="bold"
+        android:layout_weight="1"
+        android:layout_margin="5dp"
+        android:textSize="18sp"
+        >
+
+    </TextView>
+
+    <TextView
+        android:id="@+id/citypopulation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="City Population"
+        android:layout_weight="1"
+        android:layout_margin="5dp"
+        android:textStyle="bold"
+        android:textSize="16sp">
+
+    </TextView>
+
+
+
+
+
+</LinearLayout>
+</layout>
