@@ -1,7 +1,13 @@
 package com.example.apideneme.model
 
-data class City(
-    val cityName: String?,
-    val cityDesc: String?,
-    val cityPopulation: String?)
 
+import com.google.gson.annotations.SerializedName
+
+data class City(
+    @SerializedName("cityDesc")
+    val cityDesc: String?,
+    @SerializedName("cityName")
+    val cityName: String?,
+    @SerializedName("cityPopulation")
+    val cityPopulation: Int?
+)

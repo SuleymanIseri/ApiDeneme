@@ -24,7 +24,7 @@ class CityRecyclerAdapter(val cityList : ArrayList<City>) : RecyclerView.Adapter
     override fun onBindViewHolder(holder: CityViewHolder, position: Int) {
         holder.itemView.cityName.text = cityList.get(position).cityName
         holder.itemView.cityDesc.text = cityList.get(position).cityDesc
-        holder.itemView.citypopulation.text = cityList.get(position).cityPopulation
+        holder.itemView.cityPopulation.text = "Nufus :"+ cityList.get(position).cityPopulation.toString()
     }
 
     override fun getItemCount(): Int {

@@ -2,17 +2,16 @@ package com.example.apideneme.viewmodel
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.apideneme.model.City
+import com.example.apideneme.model.CityResponse
 import com.example.apideneme.service.CityAPIServis
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
-import io.reactivex.disposables.Disposable
 import io.reactivex.observers.DisposableSingleObserver
 import io.reactivex.schedulers.Schedulers
 
 class CityListViewModel : ViewModel() {
 
-    val cities = MutableLiveData<List<City>>()
+    val cities = MutableLiveData<CityResponse>()
     val cityErrorMessage = MutableLiveData<Boolean>()
     val cityLoading = MutableLiveData<Boolean>()
 
@@ -31,8 +30,8 @@ class CityListViewModel : ViewModel() {
            cityApiServis.getData()
                .subscribeOn(Schedulers.newThread())
                .observeOn(AndroidSchedulers.mainThread())
-               .subscribeWith(object : DisposableSingleObserver<List<City>>() {
-                   override fun onSuccess(t: List<City>) {
+               .subscribeWith(object : DisposableSingleObserver<CityResponse>() {
+                   override fun onSuccess(t: CityResponse) {
                        //Başarılı olursa
                        cities.value = t
                        cityErrorMessage.value = false
@@ -41,7 +40,7 @@ class CityListViewModel : ViewModel() {
 
                    override fun onError(e: Throwable) {
                        //Hata Verirse
-                       cityErrorMessage.value = false
+                       cityErrorMessage.value = true
                        cityLoading.value = false
                        e.printStackTrace()
 

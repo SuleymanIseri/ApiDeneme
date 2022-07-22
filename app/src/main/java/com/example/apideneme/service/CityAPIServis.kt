@@ -1,6 +1,6 @@
 package com.example.apideneme.service
 
-import com.example.apideneme.model.City
+import com.example.apideneme.model.CityResponse
 import io.reactivex.Single
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
@@ -21,7 +21,7 @@ class CityAPIServis {
         .create(CityAPI::class.java)
 
 
-    fun getData() : Single<List<City>> {
+    fun getData() : Single<CityResponse> {
         return api.getCity()
 
     }

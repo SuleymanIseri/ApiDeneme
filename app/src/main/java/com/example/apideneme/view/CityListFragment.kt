@@ -50,16 +50,18 @@ class CityListFragment : Fragment() {
             viewModel.refreshData()
             swipeRefreshLayout.isRefreshing = false
         }
-
+        observeLiveData()
     }
 
     fun observeLiveData(){
 
         viewModel.cities.observe(viewLifecycleOwner, Observer { cities ->
             cities?.let {
+                cities.data?.cities?.let {
+                    cityListRecycler.visibility = View.VISIBLE
+                    recyclerCityAdapter.cityListUpdate(it)
+                }
 
-                cityListRecycler.visibility = View.VISIBLE
-                recyclerCityAdapter.cityListUpdate(cities)
             }
         })
 
